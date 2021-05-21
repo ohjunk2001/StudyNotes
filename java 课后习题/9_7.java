@@ -1,5 +1,3 @@
-package exr;
-
 import java.util.Date;
 
 class Account {
