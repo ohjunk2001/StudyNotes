@@ -1,4 +1,4 @@
-The curse of knowledge, simply put, is that once you know something, you can't imagine not knowing it.
+**The curse of knowledge**, simply put, is that once you know something, you can't imagine not knowing it.
 
 And when you want to explain what you know to others, because of the imbalance of information, it is difficult to explain what you know completely to others. It feels like we are "cursed" by knowledge.
 
