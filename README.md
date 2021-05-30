@@ -1,5 +1,5 @@
-知识的诅咒（The Curse of Knowledge），简单来说就是你知道一件事物后，你就无法想象你不知道它。
+The curse of knowledge, simply put, is that once you know something, you can't imagine not knowing it.
 
-而当你想把你知道的知识解释给别人的时候，因为信息的不平衡，你很难把自己知道的完完全全给对方解释清楚，感觉就是我们被知识“诅咒”了。
+And when you want to explain what you know to others, because of the imbalance of information, it is difficult to explain what you know completely to others. It feels like we are "cursed" by knowledge.
 
-所以，你读我写的笔记时，可能会有不明白的地方，我会尽力写的通俗易懂
+So, when you read my notes, you may not understand something, which is inevitable, but I will try to make it easy to understand.
