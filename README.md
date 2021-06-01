@@ -1,7 +1,5 @@
-知识的诅咒，简单来说就是你知道一件事物后，你就无法想象你不知道它。
+**The curse of knowledge**, simply put, is that once you know something, you can't imagine not knowing it.
 
-知识的诅咒，简单来说就是你知道一件事物后，你就无法想象你不知道它。而当你想把你知道的知识解释给别人的时候，因为信息的不平衡，你很难把自己知道的完完全全给对方解释清楚。感觉就是我们被知识“诅咒”了。
+And when you want to explain what you know to others, because of the imbalance of information, it is difficult to explain what you know completely to others. It feels like we are "cursed" by knowledge.
 
-建议题主看一篇文章叫“The Curse of Knowledge”，作者是 Chip heath 和 Dan Heath，HARVARD BUSINESS REVIEW，2006。这篇文章主要是从商业角度来解释这么一个现象，以及它对从业者的影响。
-
-但是仔细想想的话，这种现象在生活里无处不在，它本质上是交流的问题。任何交流方式都是有局限性的，而如何正确高效的和别人交流也是需要技巧的。
+So, when you read my notes, you may not understand something, which is inevitable, but I will try to make it easy to understand.
