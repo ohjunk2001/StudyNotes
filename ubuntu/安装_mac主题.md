@@ -1,18 +1,43 @@
 # 安装 mocOS 主题
 
-## 安装 Tweaks 与扩展应用
+## 安装 Tweaks 
 
-## 设置 Tweaks
+```shell
+sudo apt install gnome-tweak-tool
+```
 
- 终端输入 gnome-tweaks 打开 Tweaks
+## 手动安装 Dash To Dock
+
+下载文件
+
+解压
+
+重命名
+
+移动到文件夹 /home/.local/share/gnome-shell/extensions
+
+
+Alt+F2 再输入 r 重启桌面
+
+终端输入 gnome-tweaks 打开 Tweaks
 
 
 ## 下载主题和图标
 
-sudo mv Mojave-dark /usr/share/themes
+下载文件
 
-sudo mv /usr/share/icons
+移动文件夹
 
-## 安装 Dash to dock
+```shell
+sudo mv xxxxx /usr/share/themes
 
-sudo mv dash-to-dock@micxgx.gmail.com/ .local/share/gnome-shell/extensions/
+sudo mv  xxxx /usr/share/icons
+```
+
+## 设置 Tweaks
+
+更改按键位置
+
+更改 Dock 位置，大小，自动隐藏
+
+重启
