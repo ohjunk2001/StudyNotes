@@ -13,4 +13,6 @@ cp ~/home/re.txt ./temp.txt
 -i 文件覆盖时会给出提示
 
 -r 递归复制文件夹下所有的子目录和文件
+-v 参数就可以显示拷贝的一个个文件进度了。
 
+sudo cp -r -v aaa/* bbb/
