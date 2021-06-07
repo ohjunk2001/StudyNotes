@@ -35,10 +35,10 @@ cd /usr/share/applications
 sudo vim Pycharm.desktop
 输入内容
 [Desktop Entry]
-Name=Pycharm
-Comment=Pycharm
-Exec=/usr/local/bin/pycharm-2021.1.1/bin/pycharm.sh
-Icon=/usr/local/bin/pycharm-2021.1.1/bin/pycharm.png
+Name=IDEA
+Comment=IDEA
+Exec=/usr/local/bin/idea-IU-211.7142.45/bin/idea.sh
+Icon=/usr/local/bin/idea-IU-211.7142.45/bin/idea.png
 Terminal=false
 Type=Application
 Categories=Utility;Application
