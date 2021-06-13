@@ -14,7 +14,7 @@ ip:  `121.41.227.102`
 
 再执行： 
 
-`udo apt-get autoremove --purge mysql-server-5.0`
+`sudo apt-get autoremove --purge mysql-server-5.0`
 
 然后继续用 `dpkg --list|grep mysql` 查看，还剩什么就卸载什么；
 
