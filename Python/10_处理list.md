@@ -22,6 +22,8 @@ print (str + "TEST") # 连接字符串
 number.sort()
 ```
 
+`sort(reverse=ture)` 降序排序
+
 `sorted()` 可以对列表进行一次临时排序
 
 ## 倒置列表
