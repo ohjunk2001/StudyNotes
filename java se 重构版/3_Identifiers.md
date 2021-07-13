@@ -1,6 +1,6 @@
 # Identifiers
 
-Identifiers are the names that identify the elements such as classes, methods, and variables in a program.
+**Identifiers** are the names that identify the elements such as classes, methods, and variables in a program.
 
 All identifiers must obey the following rules:
 

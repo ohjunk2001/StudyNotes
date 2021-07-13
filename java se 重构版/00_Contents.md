@@ -8,3 +8,9 @@ Identifiers
 
 Naming Conventions
 
+Variable
+
+Variable type
+
+Operator
+
