@@ -12,3 +12,5 @@ Every variable has its own type.
 |long|-2^63^ to 2^63^-1|64-bitsigened|
 |float||32-bit IEEE 754|
 |double||64-bit IEE 754|
+
+## 
