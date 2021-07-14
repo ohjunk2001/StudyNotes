@@ -13,13 +13,13 @@ sudo tar -zxvf xxxxx.tar.gz -C /usr/local/bin/
 
 ## 给权限
 
-~~~
+```
 #切换到所在目录
 cd /usr/local/bin
 ls
 #给idea目录赋权限
 sudo chmod 755 xxxxxx
-~~~
+```
 
 ## 执行安装脚本
 ```
