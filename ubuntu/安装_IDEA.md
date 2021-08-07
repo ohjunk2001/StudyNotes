@@ -7,7 +7,7 @@
 ## 解压到指定目录
 
 运行以下命令
-```
+```shell
 sudo tar -zxvf xxxxx.tar.gz -C /usr/local/bin/
 ```
 
