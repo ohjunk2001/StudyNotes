@@ -1,10 +1,16 @@
+```shell
+sudo tar -zxvf xxxxx.tar.gz -C /usr/local/bin/
+```
 
 
-/usr/local/bin/clion-2021.1.1
+
+```shell
+cd /usr/local/bin/clion-2021.1.1
 
 cd /usr/share/applications
 
 sudo vim Clion.desktop
+```
 
 ```
 [Desktop Entry]
