@@ -1,22 +1,22 @@
 # Lab 1: Booting a PC
 
-## Overview
+## 1. Overview
 
 This lab is split into three parts. The first part concentrates on getting familiarized with x86 assembly language, the QEMU x86 emulator, and the PC's power-on bootstrap procedure. The second part examines the boot loader for our kernel, which resides in the boot directory of the lab tree. Finally, the third part delves into the initial template for our kernel itself, named JOS, which resides in the kernel directory.
 
-## Get file
+## 2. Get file
 
 ```
 git clone https://pdos.csail.mit.edu/6.828/2018/jos.git lab
 ```
 
-## Frist Part
+## 3. Frist Part
 
 The purpose of the first exercise is to introduce you to x86 assembly language and the PC bootstrap process, and to get you started with QEMU and QEMU/GDB debugging. You will not have to write any code for this part of the lab, but you should go through it anyway for your own understanding and be prepared to answer the questions posed below.
 
-### Getting Started with x86 assembly
+### 3.1. Getting Started with x86 assembly
 
-### Simulating the x86
+### 3.1. Simulating the x86
 
 Instead of developing the operating system on a real, physical personal computer (PC), we use a program that faithfully emulates a complete PC: the code you write for the emulator will boot on a real PC too. Using an emulator simplifies debugging; you can, for example, set break points inside of the emulated x86, which is difficult to do with the silicon version of an x86.
 
@@ -51,7 +51,7 @@ kerninfo
 
 The help command is obvious, and we will shortly discuss the meaning of what the kerninfo command prints. Although simple, it's important to note that this kernel monitor is running "directly" on the "raw (virtual) hardware" of the simulated PC. This means that you should be able to copy the contents of obj/kern/kernel.img onto the first few sectors of a real hard disk, insert that hard disk into a real PC, turn it on, and see exactly the same thing on the PC's real screen as you did above in the QEMU window. (We don't recommend you do this on a real machine with useful information on its hard disk, though, because copying kernel.img onto the beginning of its hard disk will trash the master boot record and the beginning of the first partition, effectively causing everything previously on the hard disk to be lost!)
 
-## The PC's Physical Address Space
+## 4. The PC's Physical Address Space
 
 We will now dive into a bit more detail about how a PC starts up. A PC's physical address space is hard-wired to have the following general layout:
 
@@ -95,7 +95,7 @@ When Intel finally "broke the one megabyte barrier" with the 80286 and 80386 pro
 
 Recent x86 processors can support more than 4GB of physical RAM, so RAM can extend further above 0xFFFFFFFF. In this case the BIOS must arrange to leave a second hole in the system's RAM at the top of the 32-bit addressable region, to leave room for these 32-bit devices to be mapped. Because of design limitations JOS will use only the first 256MB of a PC's physical memory anyway, so for now we will pretend that all PCs have "only" a 32-bit physical address space. But dealing with complicated physical address spaces and other aspects of hardware organization that evolved over many years is one of the important practical challenges of OS development.
 
-## The ROM BIOS
+## 4. The ROM BIOS
 
 In this portion of the lab, you'll use QEMU's debugging facilities to investigate how an IA-32 compatible computer boots.
 
