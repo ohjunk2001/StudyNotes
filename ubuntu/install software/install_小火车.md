@@ -1,5 +1,5 @@
 
-小火车提示
+install小火车提示
 
 sudo apt install sl
 
