@@ -1,9 +1,7 @@
 # 安装与初步设置
 ## 基本信息
 
-ip:  `121.41.227.102`
 
-服务器信息：阿里云 unbuntu 20.04
 
 ## 查看mysql有没有已安装的依赖包卸载旧mysql
 `dpkg --list|grep mysql`
