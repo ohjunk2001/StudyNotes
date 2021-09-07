@@ -1,6 +1,6 @@
 # 执行 Python 程序的三种方式
 
-## 使用解释器执行
+## 1. 使用解释器执行
 
 ```
 # use Python 2.x
@@ -10,14 +10,14 @@ $ python xxx.py
 $ python3 xxx.py
 ```
 
-### Python 的其他解释器
+### 1.1. Python 的其他解释器
 
 - CPython 官方版本的 C 语言解释器
 - Jython 可以运行在 Java 平台
 - IronPython 可以运行在 .NET 和 Mono 平台上
 - PyPy Python实现的，支持 JIT 即时编译
 
-## 交互式运行 Python 程序
+## 2. 交互式运行 Python 程序
 
 - 直接在终端运行解释器，不需要输入文件名
 - 在 Python 的 `shell` 中输入语句会立即看到结果
@@ -33,7 +33,7 @@ $ python3 xxx.py
 - 输入 `exit()`
 - `Ctrl+d`
 
-### IPython
+### 2.1. IPython
 
 IPython 是一种交互式解释器，比默认的 Python 解释器好用
 
@@ -49,7 +49,7 @@ python 3.x 是 ipython3
 
 退出解释器的方式相同
 
-## 通过 IDE 来执行
+## 3. 通过 IDE 来执行
 
 我们使用的 IDE 是 Pycharm
 
