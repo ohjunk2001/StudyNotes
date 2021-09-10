@@ -1,6 +1,6 @@
 # while
 
-```
+```python
 while condition:
   statement
 ```

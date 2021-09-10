@@ -10,8 +10,9 @@ Dictionary 是除 List 以外 Python 中最灵活的数据类型
   - 键和值之间使用 `:` 分隔
   - 键必须唯一，值可以取任何数据类型
 
-  ```
+  ```python
   people={"name":"小明",
   "age":18,
   "height":1.75}
   ```
+
