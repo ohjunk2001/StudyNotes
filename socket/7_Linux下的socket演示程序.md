@@ -23,7 +23,7 @@ int main(){
 
     // 将套接字和IP，端口绑定
     struct sockaddr_in serv_addr;
-    // 每一个字节都用 o 来填充
+    // 每一个字节都用 0 来填充
     memset(&serv_addr,0,sizeof (serv_addr));
     // 使用 IPV4 地址
     serv_addr.sin_famlily=AF_INET;

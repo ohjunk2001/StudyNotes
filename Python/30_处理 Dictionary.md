@@ -11,7 +11,7 @@
 
 **获取和修改 key 值** 
 
-```py
+```python
 people={"name":"小明",
   "age":18,
   "height":1.75}
@@ -21,7 +21,7 @@ people["age"]=19 # 修改 "age" 对应的 key 值
 
 **合并字典**
 
-```py
+```python
 temp_dict={"age":18,
 "height":1.75}
 
