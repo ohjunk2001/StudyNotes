@@ -10,3 +10,6 @@ Plugins：
 
 - Markdown Preview Enhanced
 - One dark Pro
+
+[Info]    2021-09-24 08:31:13 初始管理员账号：admin@cloudreve.org
+[Info]    2021-09-24 08:31:13 初始管理员密码：rMSJsnnY

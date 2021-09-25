@@ -8,11 +8,11 @@
 Case
 
 ```
-yanghao@yanghao-X550VC:~/桌面$ which ls
+$ which ls
 /usr/bin/ls
-yanghao@yanghao-X550VC:~/桌面$ which git
+$ which git
 /usr/bin/git
-yanghao@yanghao-X550VC:~/桌面$ which tar
+$ which tar
 /usr/bin/tar
 ```
 
