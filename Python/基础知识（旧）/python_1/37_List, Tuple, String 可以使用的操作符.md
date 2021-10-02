@@ -1,4 +1,4 @@
-# List， Tuple, String, Dictionary 可以使用的操作符
+# List, Tuple, String, Dictionary 可以使用的操作符
 
 |操作符|表达式|结果|描述|支持的数据类型|
 |---|---|--|--|-------|
