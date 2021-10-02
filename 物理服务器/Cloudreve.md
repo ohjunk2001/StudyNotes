@@ -100,3 +100,4 @@ iP:端口号访问
 sudo ufw allow 5212 # 开放 5212 端口
 ```
 
+ufw allow 5212
