@@ -4,12 +4,3 @@ And when you want to explain what you know to others, because of the imbalance o
 
 So, when you read my notes, you may not understand somewhere, which is inevitable, but I will try to make it easy to understand.
 
-**For a better reading experience, it is recommended that you use VS Code**
-
-Plugins：
-
-- Markdown Preview Enhanced
-- One dark Pro
-
-[Info]    2021-09-24 08:31:13 初始管理员账号：admin@cloudreve.org
-[Info]    2021-09-24 08:31:13 初始管理员密码：rMSJsnnY
