@@ -5,54 +5,38 @@
 server.cpp 
 
 ```c
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <arpa/inet.h>
-#include <sys/socket.h>
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<arpa/inet.h>
+#include<sys/socket.h>
 
 int main(){
-    // 创建 socket
-    /*
-    1) AF_INET 表示使用 IPV4 地址
-    2) SOCK_STREAM 表示使用流格式的套接字
-    3) IPPROTO_TCP 表示使用 TCP 协议
-    */
-    int socket=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+    int sock=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP); // ipv4 流格式的套接字，TCP 协议
+    
+    struct sockaddr_in server_address;
+    memset(&server_address,0,sizeof(server_address));// 用 0 填充。
 
-    // 将套接字和IP，端口绑定
-    struct sockaddr_in serv_addr;
-    // 每一个字节都用 0 来填充
-    memset(&serv_addr,0,sizeof (serv_addr));
-    // 使用 IPV4 地址
-    serv_addr.sin_famlily=AF_INET;
-    // 具体的 IP 地址
-    serv_addr.sin_addr.s_addr=inet_addr("127.0.0.1");
-    // 端口
-    serv_addr.sin_port=host(1234);
-    /*
-    1) bind() 函数将套接字 serv_sock 与特点的 IP 地址和端口绑定。
-    2) IP 地址和端口都保存在 sockaddr_in 结构体中。
-    3) socket() 函数确定了套接字的各种属性，bind() 函数让套接字与特定的 IP 地址和端口对应起来，这样客户端才能连接到该套接字。
-    */
-    bind(serv_sock,(struct sockaddr*)&clnt_addr,&clnt_size);
+    server_address.sin_family=AF_INET;
+    server_address.sin_port=htons(1234);
+    server_address.sin_addr.s_addr=inet_addr("127.0.0.1");
 
-    //进入监听状态，等待用户发起请求
-    listen(serv_sock,20);
+    bind(sock,(struct sockaddr*)&server_address,sizeof(server_address)); // 将套结字与特定的 ip 和 端口绑定。
 
-    // 接受客户端的请求
-    struct sockaddr_in clnt_addr;
-    socklen_t clnt_addr_size=sizeof(clnt_addr);
-    int clnt_sock=accept(serv_sock,(struct sockaddr*)&clnt_addr,&clnt_addr_size);
+    listen(sock,20); // 进入监听状态，等待用户发起请求监听状态， 20 是消息队列的数量。
 
-    //向客户端发送数据
-    char str[]="尼玛死了";
-    write(clnt_sock,str,sizeof(str));
+    struct sockaddr_in client_addr;
+    socklen_t clnt_addr_size=sizeof(client_addr); // 这一步就是在求 client_addr 的长度。你也可以直接在参数中填 sizeof(clnt_addr)
+    int client_socket=accept(sock,(struct sockaddr*)&client_addr,&clnt_addr_size);  // aceept 接受并返回一个新的 socket。
 
-    // 关闭套接字
-    close(clnt_sock);
-    close(serv_sock);
+    // 向客户端写数据。
+    char str[]="hello!";
+    write(client_socket,str,sizeof(str));
+
+    // 关闭套结字
+    close(client_socket);
+    close(sock);
 
     return 0;
 }
@@ -62,34 +46,30 @@ client.cpp
 
 ```c
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <arpa/inet.h>
-#include <sys/socket.h>
+#include<string.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<arpa/inet.h>
+#include<sys/socket.h>
 
 int main(){
     int sock=socket(AF_INET,SOCK_STREAM,0);
 
-    // 向服务器（特定的 IP 和端口）发起请求。
-    struct sockaddr_in serv_addr;
-    // 每个字节用 0 填充。
-    memset(&serv_addr,0,sizeof(serv_addr));
-    // 使用 IPV4 地址
-    serv_addr.sin_famlily=AF_INET;
-    // 具体的 IP 地址。
-    serv_addr.sin_addr.s_addr=inet_addr("127.0.01");
-    // 端口
-    serv_addr.sin_port=htons(1234);
+    struct sockaddr_in server_addr;
+    memset(&server_addr,0,sizeof(server_addr));
 
-    connect(sock,(struct sockaddr*)&serv_addr,sizeof(serv_addr));
+    // 写入特定的 IP 和端口号。
+    server_addr.sin_family=AF_INET;
+    server_addr.sin_port=htons(1234);
+    server_addr.sin_addr.s_addr=inet_addr("127.0.0.1");
 
-    // 读取服务器传回来的数据。
+    connect(sock,(struct sockaddr*)&server_addr,sizeof(server_addr));
+
     char buffer[40];
-    read(sock,buffer,sizeof(buffer)-1);
-    printf("Message from server::%s\n",buffer);
 
-    // 关闭套接字
+    read(sock,buffer,sizeof(buffer)-1);
+
+    printf("Message from server::%s\n",buffer);
     close(sock);
     return 0;
 }
