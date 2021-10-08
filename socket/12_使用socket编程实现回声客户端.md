@@ -4,81 +4,97 @@
 
 对！客户端也可以使用 write() / send() 函数向服务器发送数据，服务器也可以使用 read() / recv() 函数接收数据。
 
-考虑到大部分初学者使用 Windows 操作系统，本节将实现 Windows 下的回声程序，Linux 下稍作修改即可，不再给出代码。
+以下在 Liunx 上例子
 
-服务器端 server.cpp：
+服务器端 server.c：
 
 ```c
-#include <stdio.h>
-#include <winsock2.h>
-#pragma comment (lib, "ws2_32.lib")  //加载 ws2_32.dll
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<arpa/inet.h>
+#include<sys/socket.h>
 #define BUF_SIZE 100
+
+// server 创建了两个 socket 
+
 int main(){
-    WSADATA wsaData;
-    WSAStartup( MAKEWORD(2, 2), &wsaData);
-    //创建套接字
-    SOCKET servSock = socket(AF_INET, SOCK_STREAM, 0);
-    //绑定套接字
-    struct sockaddr_in sockAddr;
-    memset(&sockAddr, 0, sizeof(sockAddr));  //每个字节都用0填充
-    sockAddr.sin_family = PF_INET;  //使用IPv4地址
-    sockAddr.sin_addr.s_addr = inet_addr("127.0.0.1");  //具体的IP地址
-    sockAddr.sin_port = htons(1234);  //端口
-    bind(servSock, (SOCKADDR*)&sockAddr, sizeof(SOCKADDR));
-    //进入监听状态
-    listen(servSock, 20);
-    //接收客户端请求
-    SOCKADDR clntAddr;
-    int nSize = sizeof(SOCKADDR);
-    SOCKET clntSock = accept(servSock, (SOCKADDR*)&clntAddr, &nSize);
-    char buffer[BUF_SIZE];  //缓冲区
-    int strLen = recv(clntSock, buffer, BUF_SIZE, 0);  //接收客户端发来的数据
-    send(clntSock, buffer, strLen, 0);  //将数据原样返回
-    //关闭套接字
-    closesocket(clntSock);
-    closesocket(servSock);
-    //终止 DLL 的使用
-    WSACleanup();
+    int sock=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP); // ipv4 流格式的套接字，TCP 协议
+    
+    struct sockaddr_in server_address;
+    memset(&server_address,0,sizeof(server_address));// 用 0 填充。
+
+    server_address.sin_family=AF_INET;
+    server_address.sin_port=htons(1234);
+    server_address.sin_addr.s_addr=inet_addr("127.0.0.1");
+
+    bind(sock,(struct sockaddr*)&server_address,sizeof(server_address)); // 将套结字与特定的 ip 和 端口绑定。
+
+    listen(sock,20); // 进入监听状态，等待用户发起请求监听状态， 20 是消息队列的数量。
+    printf("准备接受客户端的请求！\n");
+
+    struct sockaddr_in client_addr;
+    socklen_t clnt_addr_size=sizeof(client_addr); // 这一步就是在求 client_addr 的长度。你也可以直接在参数中填 sizeof(clnt_addr)
+    int client_socket=accept(sock,(struct sockaddr*)&client_addr,&clnt_addr_size);  // aceept 接受并返回一个新的 socket 即 client_socket。
+
+    char buffer[BUF_SIZE];//定义缓冲区
+
+    int strlen=read(client_socket,buffer,BUF_SIZE);
+    // read() 若无错误发生，read()返回读入的字节数。如果连接已中止，返回 0。如果发生错误，返回 -1 。
+
+    // 将客户端发送的数据返回
+    write(client_socket,buffer,strlen);
+
+    // 关闭套结字
+    close(client_socket);
+    close(sock);
+
     return 0;
 }
 ```
 
-客户端 client.cpp
+客户端 client.c
 
 ```c
 #include <stdio.h>
-#include <stdlib.h>
-#include <WinSock2.h>
-#pragma comment(lib, "ws2_32.lib")  //加载 ws2_32.dll
+#include<string.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<arpa/inet.h>
+#include<sys/socket.h>
 #define BUF_SIZE 100
+
+// client 只创建了一个 socket
+
 int main(){
-    //初始化DLL
-    WSADATA wsaData;
-    WSAStartup(MAKEWORD(2, 2), &wsaData);
-    //创建套接字
-    SOCKET sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
-    //向服务器发起请求
-    struct sockaddr_in sockAddr;
-    memset(&sockAddr, 0, sizeof(sockAddr));  //每个字节都用0填充
-    sockAddr.sin_family = PF_INET;
-    sockAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    sockAddr.sin_port = htons(1234);
-    connect(sock, (SOCKADDR*)&sockAddr, sizeof(SOCKADDR));
-    //获取用户输入的字符串并发送给服务器
-    char bufSend[BUF_SIZE] = {0};
-    printf("Input a string: ");
-    scanf("%s", bufSend);
-    send(sock, bufSend, strlen(bufSend), 0);
-    //接收服务器传回的数据
-    char bufRecv[BUF_SIZE] = {0};
-    recv(sock, bufRecv, BUF_SIZE, 0);
-    //输出接收到的数据
-    printf("Message form server: %s\n", bufRecv);
-    //关闭套接字
-    closesocket(sock);
-    //终止使用 DLL
-    WSACleanup();
-    system("pause");
+    int sock=socket(AF_INET,SOCK_STREAM,0);
+
+    struct sockaddr_in server_addr;
+    memset(&server_addr,0,sizeof(server_addr));
+
+    // 写入特定的 IP 和端口号。
+    server_addr.sin_family=AF_INET;
+    server_addr.sin_port=htons(1234);
+    server_addr.sin_addr.s_addr=inet_addr("127.0.0.1");
+
+    connect(sock,(struct sockaddr*)&server_addr,sizeof(server_addr)); // 与远程服务器建立连接。
+
+    // 向服务器发送数据。
+    char BufferSend[BUF_SIZE]={0};
+    printf("Input a string:");
+    scanf("%s",BufferSend);
+    write(sock,BufferSend,strlen(BufferSend));
+
+    // 接受服务器传回的数据。
+    char BufferRecv[BUF_SIZE]={0};
+    read(sock,BufferRecv,BUF_SIZE);
+
+    // 输出接受的信息。
+    printf("Receive message:%s\n",BufferRecv);
+
+    // 关闭套结字。
+    close(sock);
     return 0;
 }
 ```
@@ -86,8 +102,8 @@ int main(){
 先运行服务器端，再运行客户端，执行结果为：
 
 ```
-Input a string: c-language java cpp↙
-Message form server: c-language
+Input a string: yanghao
+Receive message: yanghao
 ```
 
 scanf() 读取到空格时认为一个字符串输入结束，所以只能读取到“c-language”；如果不希望把空格作为字符串的结束符，可以使用 gets() 函数。
