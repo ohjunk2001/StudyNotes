@@ -22,3 +22,4 @@ Terminal=false
 Type=Application
 Categories=Utility;Application
 ```
+
