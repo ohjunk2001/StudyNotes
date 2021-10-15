@@ -1,4 +1,22 @@
-# 安装 mocOS 主题
+# 美化 Ubuntu 20.04
+
+## 安装后续需要用到的软件
+
+```shell
+$ sudo apt install gnome-tweak-tool gnome-shell-extensions chrome-gnome-shell
+$ sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf 
+$ sudo apt install sassc optipng inkscape libcanberra-gtk-module libglib2.0-dev libxml2-utils
+```
+
+
+
+https://www.gnome-look.org/p/1403328/
+
+https://zhuanlan.zhihu.com/p/176977192
+
+https://www.cnblogs.com/feipeng8848/p/8970556.html
+
+
 
 ## 安装 Tweaks 
 
