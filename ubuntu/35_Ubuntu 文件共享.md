@@ -12,13 +12,13 @@
 
 ## 2. 创建一个共享文件夹
 
-```
+```shell
 $ mkdir /home/yanghao/smbshare
 ```
 
 ## 3. 修改 samba 配置文件
 
-```
+```shell
 // 修改 /etc/samba/smb.conf
 $ sudo vim /etc/samba/smb.conf
 // 在smb.conf文件最后加上以下内容
@@ -61,14 +61,14 @@ $ sudo smbpasswd -a yanghao
 
 在 Ubuntu 上输入一下命令找到你的 ip 地址。
 
-```
-ifconfig -a
+```shell
+$ ifconfig -a
 ```
 
 在 win 10 上 ，按 win + r 输入
 
-```
-//ip/
+```shell
+$ //ip/
 ```
 
 你就可以访问了。

@@ -1,51 +1,35 @@
 # 安装与初步设置
 ## 基本信息
 
-
-
 ## 查看mysql有没有已安装的依赖包卸载旧mysql
-`dpkg --list|grep mysql`
 
-先卸载mysql-common
-`sudo apt-get remove mysql-common`
-
-
-再执行： 
-
-`sudo apt-get autoremove --purge mysql-server-5.0`
-
-然后继续用 `dpkg --list|grep mysql` 查看，还剩什么就卸载什么；
-
-
-更新apt-get，更新后将会使用最新资源库
-
-`sudo apt-get update`
-
+```shell
+$ dpkg --list|grep mysql
+$ sudo apt-get remove mysql-common // 先卸载mysql-common
+$ sudo apt-get autoremove --purge mysql-server-5.0
+# 然后继续用 dpkg --list|grep mysql 查看，还剩什么就卸载什么；
+$ sudo apt-get update
+```
 ## 安装MySQL:
 
-`sudo apt-get install mysql-server`
+```shell
+$ sudo apt-get install mysql-server
+$ mysql --version # 查看版本
 
-安装完成后可以输入
+#安装后，MySQL服务器应自动启动。要检查它是否正在运行，执行
+$ systemctl status mysql.service`
 
-`mysql --version`
-
-查看版本
-
-安装后，MySQL服务器应自动启动。
-要检查它是否正在运行，执行
-
-`systemctl status mysql.service`
-
-如果由于某些原因MySQL服务器未
-运行，执行以下命令以启动MySQL服务器：`sudo systemctl start mysql`
-
+# 如果由于某些原因MySQL服务器未运行，执行以下命令以启动MySQL服务器：
+$ sudo systemctl start mysql
+```
 ## 配置
 
 
 为了提高MySQL安装的安全性，执行以下命令进行初始化
 
-`sudo mysql_secure_installation`
-
+```shell
+$ sudo mysql_secure_installation
+```
 在按Enter键之后，将出现的第一件事是VALIDATE PASSWORD插件提示窗口：此步骤
 是为root用户设置安全密码，具体取决于选择的密码类型。
 
