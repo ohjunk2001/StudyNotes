@@ -37,3 +37,10 @@ $ ssh -T git@yanghao9527
 
 
 
+在每个仓库配置账户信息
+
+```
+  git config user.email "you@example.com"
+  git config user.name "Your Name"
+```
+
