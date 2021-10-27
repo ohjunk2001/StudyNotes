@@ -2,7 +2,11 @@
 
 官网的安装教程写的就很好
 
+https://zhuanlan.zhihu.com/p/136328910
+
 https://wiki.winehq.org/Ubuntu
+
+https://blog.csdn.net/qq_39182815/article/details/108888186
 
 下面是针对 Ubuntu 20.04 的安装
 
@@ -59,9 +63,9 @@ wine常用命令：
 winecfg
 ```
 
-![no.1]
+![no.1][no.1]
 
-![no.2]
+![no.2][no.1]
 
 设置为 win 10
 
