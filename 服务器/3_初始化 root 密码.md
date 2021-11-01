@@ -6,7 +6,7 @@ root 账号需要另外设置。
 
 打开终端，输入以下命令。
 
-```
+```bash
 sudo passwd root
 ```
 
