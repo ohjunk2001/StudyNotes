@@ -35,7 +35,7 @@ $ sudo update-alternatives --config javadoc
 
 ## 4. 配置环境变量
 
-> 如果你要用命令编译这环境变量需要配置，只是用 IDEA 没有必要配置
+> 如果是用 IDE 的开发，没有必要配置，只需知道 Java 被安装到哪里 `/usr/lib/jvm/`。
 
 在一些 Java 应用中，环境变量JAVA_HOME被用来表示 Java 安装位置。想要设置 JAVA_HOME 变量，首先使用update-alternatives找到 Java 安装路径
 
