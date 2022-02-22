@@ -10,11 +10,11 @@ sudo apt-get install build-essential
 
 执行完后，就完成了gcc,g++,make的安装。build-essential是一整套工具，gcc，libc等等。
 
-通过 `g++ -v` 可以查看g++是否安装成功。
+通过 `g++ -v` 可以查看 g++ 是否安装成功。
 
 通过 `gcc -version` 可以查看 gcc 是否安装成功。
 
-注：“sudo apt-get install build-essential –fix-missing”，这个命令是修补安装build-essential，即已安装了部分build-essential，但没有安装完全，此时可以使用该命令继续安装build-essential。
+注：“sudo apt-get install build-essential –fix-missing”，这个命令是修补安装build-essential，即已安装了部分build-essential，但没有安装完全，此时可以使用该命令继续安装 build-essential。
 
 ## 2.CentOS下g++的安装
 
