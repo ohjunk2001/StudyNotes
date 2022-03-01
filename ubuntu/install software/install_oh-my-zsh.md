@@ -17,7 +17,6 @@ https://blog.csdn.net/RRie1/article/details/108989603
 # 安装 zsh
 $ zsh
 # 选择 2
-
 $ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ```
 

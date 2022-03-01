@@ -5,10 +5,12 @@ sudo apt install sl
 
 对命令 top 优化显示
 
-sudo apt install htop
 
-```
-sudo apt-get install cmake git gcc g++ mesa-* libwayland-dev libxrandr-dev
-sudo apt-get install libvulkan1 mesa-vulkan-drivers vulkan-utils
-vulkaninfo
+```bash
+sudo apt-get install htop # 优化 top 命令显示
+sudo apt-get install curl 
+sudo apt-get install build-essential # gcc 和 g++
+sudo apt-get install neofetch # 端口显示系统信息
+sudo apt-get install vim # 大名顶顶的 vim
+sudo apt-get install kchmviewer # 阅读 chm 格式的文档 
 ```
