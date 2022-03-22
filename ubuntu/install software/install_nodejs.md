@@ -14,7 +14,7 @@ $ wget https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/v14.9.0/node-v14.9.0-
 $ tar xvf node-v14.9.0-linux-x64.tar.xz
 
 # 将解压后的目录改名为 node 并移动到 /usr/local 目录下
-$ sudo mv node-v14.9.0-linux-x64/bin/node ./node
+$ sudo mv node-v14.9.0-linux-x64 ./node
 $ sudo mv node /usr/local
 
 # 给 node 目录赋予权限
