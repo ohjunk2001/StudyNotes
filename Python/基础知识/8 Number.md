@@ -1,4 +1,3 @@
-# Number
 
 NUmber 数据类型包含以下几种 int, float, bool, complex
 

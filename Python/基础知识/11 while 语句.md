@@ -1,4 +1,3 @@
-# while
 
 ```python
 while condition:
