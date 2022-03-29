@@ -1,4 +1,3 @@
-# Ubuntu 上安装 Maven
 
 ## 下载 Maven
 

@@ -1,4 +1,3 @@
-# Java 数据类型
 
 > Java 语言支持的数据类型分为两种：基本数据类型（Primitive Type）和引用数据类型（Reference Type）。
 

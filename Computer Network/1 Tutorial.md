@@ -1,4 +1,3 @@
-# Tutorial
 
 ## Computer Network Tutorial
 

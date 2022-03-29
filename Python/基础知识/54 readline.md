@@ -1,4 +1,3 @@
-# readline
 
 readline 会一行一行的读取文件
 

@@ -1,4 +1,3 @@
-# Introduction
 
 # What is a Computer Network?
 

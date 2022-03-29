@@ -1,4 +1,3 @@
-# StringBuffer 和 StringBuilder
 
 - 当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。
 - 和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。

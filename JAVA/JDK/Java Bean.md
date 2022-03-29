@@ -1,4 +1,3 @@
-# Java Bean
 
 Java Bean 是一种 Java 语言写成的可重用组件。
 

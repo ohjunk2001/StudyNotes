@@ -1,4 +1,3 @@
-# 完整的 for loop
 
 ```
 for variable in set:

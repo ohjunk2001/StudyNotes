@@ -1,4 +1,3 @@
-# Dictionary
 
 Dictionary 是除 List 以外 Python 中最灵活的数据类型
 

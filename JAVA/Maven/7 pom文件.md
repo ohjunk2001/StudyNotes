@@ -1,4 +1,3 @@
-# pom 文件
 
 pom 文件是 maven 的核心文件，管理着 maven 的的方方面面。
 

@@ -1,4 +1,3 @@
-# 学习 SpringBoot 的准备
 
 - Spring 架构的使用经验；
 - 熟练的使用 Maven 进行项目构建和依赖管理；
