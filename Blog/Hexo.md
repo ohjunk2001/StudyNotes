@@ -53,9 +53,6 @@ sudo mkdir -p /var/www/hexo
 cd /var/repo  #转到git仓库的文件夹
 sudo git init --bare blog.git #创建一个名叫blog的仓库
 sudo vim /var/repo/blog.git/hooks/post-update
-
-
-ssh -v git@42.193.120.165
 ```
 
 post-update 内容如下
@@ -160,7 +157,7 @@ hexo-generator-sitemap  // 生成全站站点地图 sitemap
 
 #### 主题配置
 
-##### 生成主题配置文件
+##### 创建主题配置文件
 
 ```
 # git clone 下的文件只有 _config.yml.example 
@@ -272,7 +269,7 @@ search:
 # History version 使你的博客可以看到源码，版本控制
 history_control: # make you wiki has history version control in page
     enable: true
-    server_link: https://github.com # recommend use GitHub https://github.com
+    server_link:  # recommend use GitHub https://github.com
     user: git
     repertory: Wiki-site
     branch: writing
@@ -499,6 +496,20 @@ date: 2017-02-16 12:56:24
 ---
 
 ````
+
+## 文章发布
+
+```
+hexo s 本地运行
+hexo g 生成静态文件
+hexo g --watch 
+hexo d
+
+systemctl status nginx
+systemctl start nginx
+systemctl stop nginx
+systemctl restart nginx
+```
 
 
 
