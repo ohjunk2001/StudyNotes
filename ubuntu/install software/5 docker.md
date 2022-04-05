@@ -1,16 +1,3 @@
-# install docker
-
-账户：
-
-```
-hd2098101
-
-tool2020@qq.com
-
-!Yh174783
-```
-
-
 
 https://docs.docker.com/engine/install/ubuntu/
 
