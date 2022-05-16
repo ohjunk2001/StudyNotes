@@ -1,7 +1,5 @@
 # 安装 jdk
 
-> 请不要换源
-
 ## 1. 安装 OpenJDK 8
 
 ```
@@ -45,7 +43,7 @@ $ sudo update-alternatives --config java
 找到你要配置环境变量的 JDK 安装地址。编辑 /etc/profile.d/env.sh 
 
 ```shell
-$ cd /etc/profile.d/env.sh
+$ vim /etc/profile.d/env.sh
 ->
 #java
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64# 这里要注意目录要换成自己解压的jdk 目录
