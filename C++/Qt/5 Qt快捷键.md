@@ -1,0 +1,14 @@
+- `alt +enter` // 自动创建类的定义
+- `F1` // 查看帮助，文档
+- `F2` // 快速到变量声明
+- `Shift + F2` // 函数的声明和定义之间快速切换
+- `F4` // 在 cpp 和 h 文件切换
+- `Ctrl +M` 创建书签， `Ctrl + .` 切换书签 `Alt + M`打开书签栏。
+- `Ctrl + Enter` 换行 ， `Ctrl +Shift + Enter` 到上一行添加
+- `Ctrl + ]`,`Ctrl+[` 跳到程序段结尾 或者开头
+- `Ctrl + I` 自动缩进当前行
+- `Shift+delete` 剪切当前行，可以当做删除用
+- `Ctrl + R` 运行程序
+- `Ctrl + B` Build 项目
+- `Ctrl + /` 注释当前行 或者选中的区域
+- `Ctrl+I` 格式化代码
