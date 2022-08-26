@@ -25,6 +25,38 @@ c=a+" "+b
 
 `lstrip()` 删除字符串开头的空白
 
+### 比较字符串
+
+3.x 版本使用算子模块
+
+```python
+>>> import operator
+>>> operator.eq('hello', 'name');
+False
+>>> operator.eq('hello', 'hello');
+True
+```
+
+2.x 版本使用 cmp 函数
+
+ cmp() 方法比较两个对象，返回 0 表示相等，1 表示前导大于尾随，-1 表示小于。
+
+```python
+a = "abc"
+b = "abc"
+c = "aba"
+d = "abd"
+print cmp(a,b) 
+print cmp(a,c) 
+print cmp(a,d)
+//返回
+0
+1
+-1
+```
+
+
+
 ## 常用的函数
 
 | 函数              | 功能                                       |

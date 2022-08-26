@@ -1,4 +1,4 @@
-# 为 Appimage 添加启动图标
+# 为软件添加启动图标
 
 启动文件一般都在 `/usr/share/applications` 中
 
