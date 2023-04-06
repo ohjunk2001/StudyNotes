@@ -88,4 +88,3 @@ Icon=/usr/local/bin/idea-IU-211.6693.111/bin/idea.png
 Terminal=false
 Type=Application
 Categories=Utility;Application
-```

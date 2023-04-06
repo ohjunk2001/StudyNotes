@@ -41,7 +41,7 @@ push项目：
 ## 生成秘钥
 
 ```
-ssh-keygen -t rsa -C "yanghao.tianjin.mail@gmail.com"
+ssh-keygen -t rsa -C "winkcial@gmail.com"
 ```
 之后连续按三次回车就行了
 
